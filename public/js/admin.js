@@ -68530,7 +68530,7 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\web\3-98\afrangdev\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! F:\web\3-98\autoselbsthilfe\resources\js\admin.js */"./resources/js/admin.js");
 
 
 /***/ })

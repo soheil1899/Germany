@@ -21,7 +21,7 @@ Vue.component('slider-component', require('./components/web/pages/SliderComponen
 Vue.component('our-product', require('./components/web/pages/OurProduct').default);
 Vue.component('news-component', require('./components/web/pages/NewsComponent').default);
 Vue.component('about-firstpage', require('./components/web/pages/AboutFirstpage').default);
-Vue.component('google-map', require('./components/web/pages/GoogleMap').default);
+Vue.component('google-map', require('./components/web/pages/MyGoogleMap').default);
 
 
 

@@ -49305,7 +49305,7 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\web\3-98\afrangdev\resources\js\firstpage.js */"./resources/js/firstpage.js");
+module.exports = __webpack_require__(/*! F:\web\3-98\autoselbsthilfe\resources\js\firstpage.js */"./resources/js/firstpage.js");
 
 
 /***/ })
