@@ -1,0 +1,105 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap');
+// Variables
+@import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+
+@font-face {
+    font-family: 'IranSanse';
+    src: url('/admin/fonts/IranSanse.eot'),
+    url('/admin/fonts/IranSanse.woff') format('woff'), /* Pretty Modern Browsers */
+    url('/admin/fonts/IranSanse.ttf') format('truetype');/* Safari, Android, iOS */
+}
+
+.titlefont {
+    font-family: 'Architects Daughter';
+}
+
+
+.widthfit {
+    width: fit-content;
+}
+
+body {
+    background-color: #fff5f5;
+}
+
+.header-serchbtn {
+    border-radius: 50%;
+}
+
+.header-serchinput {
+    border-radius: 40px;
+}
+
+.vollkorn-font {
+    font-family: 'Raleway';
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 5px 10px 0 #ccc;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+.suport-bar {
+    background-color: #f8f8f8;
+}
+
+.footerpage {
+    background-color: #333333;
+    color: #fff;
+}
+
+.titlefooter {
+    border-left: 3px solid #EB3300;
+}
+
+.footerbottom {
+    background-color: #ffc74a;
+    color: #000;
+}
+
+.footerbottom a {
+    text-decoration: none;
+}
+
+
+.header-logo {
+    border-radius: 50px;
+    box-shadow: 0 -5px 10px 0;
+}
+
+.header-img {
+    top: 20%;
+    left: 25%;
+    z-index: 10;
+}
+
+.myshadow {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
