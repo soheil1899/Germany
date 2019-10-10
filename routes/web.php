@@ -15,12 +15,11 @@ Route::get('/','Auth\OtherUserController@logout')->name('logout');
 
 Auth::routes();
 
+Route::get('/getsetting','Website\PagesController@getmysetting')->name('getsetting');
+Route::get('/getabout','Website\PagesController@getabout')->name('getabout');
+Route::get('/getgallery','Website\PagesController@getgallery')->name('getgallery');
+Route::get('/gettable','Website\PagesController@gettable')->name('gettable');
 Route::post('/getlang','Controller@getlang')->name('getlang');
-Route::post('Loadfirstpage', 'Controller@Loadfirstpage')->name('Loadfirstpage');
-Route::post('LoadArticle','Admin\ArticleController@LoadArticleData')->name('LoadArticle');
-Route::post('LoadPortfolio','Admin\ArticleController@LoadPortfolio')->name('LoadPortfolio');
-Route::post('getcountry','Website\PagesController@getcountry')->name('getcountry');
-Route::post('getmysetting','Website\PagesController@getmysetting')->name('getmysetting');
 
 
 Route::prefix('/')->namespace('Website')->group(function () {

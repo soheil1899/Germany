@@ -11,47 +11,57 @@
             <div class="col-12 col-lg-3 mb-4 text-center">
                 <i class="fas fa-mobile-alt fa-3x d-block mb-3"></i>
                 <label><strong>
-                    017648885888
+                    {{setting['otherphone']}}
                 </strong></label>
             </div>
             <div class="col-12 col-lg-4 mb-4 text-center">
                 <i class="fas fa-user-tie fa-3x d-block mb-3"></i>
                 <label><strong>
-                    Dipl.Ing. Masoud Mahdiar
+                    {{setting['telegram']}}
                 </strong></label>
             </div>
             <div class="col-12 col-lg-3 mb-4 text-center">
                 <i class="fas fa-phone-square fa-3x d-block mb-3"></i>
                 <label><strong>
-                    040/42909159
+                    {{setting['phone']}}
                 </strong></label>
             </div>
             <div class="col-12 col-lg-3 mb-4 text-center">
                 <i class="fas fa-coins fa-3x d-block mb-3"></i>
                 <label><strong>
-                    Steuer-ID: DE257135606
+                    {{setting['supportphone']}}
                 </strong></label>
             </div>
             <div class="col-12 col-lg-6 mb-4 text-center">
                 <i class="fas fa-map-marker fa-3x d-block mb-3"></i>
                 <label><strong>
-                    Autoselbthilfe Hanse , Usedom Straße 14 , 22047 Hamburg
+                    {{setting['address']}}
                 </strong></label>
             </div>
             <div class="col-12 col-lg-3 mb-4 text-center">
                 <i class="fas fa-clock fa-3x d-block mb-3"></i>
                 <label><strong>
-                    Mo-Sa. 9:00-19:00
+                    {{setting['fax']}}
                 </strong></label>
             </div>
         </div>
     </div>
 </template>
-</template>
 
 <script>
     export default {
-        name: "AboutFirstpage"
+        name: "AboutFirstpage",
+        data(){
+            return{
+                setting: [],
+            }
+        },
+        mounted() {
+            let that = this;
+            axios.get('/getsetting').then(function (response) {
+                that.setting = response.data;
+            });
+        }
     }
 </script>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title>HANSE AUTOSELBSTHiLFE</title>
+    <title><?php echo e($setting['websitename']); ?></title>
 
 
     <link rel="stylesheet" href="/css/app.css">

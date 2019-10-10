@@ -31,24 +31,32 @@ class PagesController extends Controller
     }
 
     function index(){
-//        $setting=$this->getsetting();
-//        $header=(object) array();
-//        $header->title=$setting->websitename;
-//        $header->keywords=$setting->keywords;
-//        $header->description=$setting->description;
-//        $header->image='/media/Layout/'.$setting->logo;
+        $setting=$this->getsetting();
 
 
 
-        return view('website.pages.index');
+        return view('website.pages.index', compact('setting'));
     }
+
 
 
 
     public function getmysetting()
     {
-        $setting = $this->getsetting();
-        return $setting;
+        return $this->getsetting();
+    }
+
+    public function getabout()
+    {
+        return articles::where('id', 1)->with('toContent')->first();
+    }
+    public function getgallery()
+    {
+        return articles::where('id', 2)->with('toContent')->first();
+    }
+    public function gettable()
+    {
+        return articles::where('id', 3)->with('toContent')->first();
     }
 
 

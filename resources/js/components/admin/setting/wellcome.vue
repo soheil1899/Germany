@@ -13,7 +13,8 @@
                             <a class="dropdown-item" href="/admin/profile">{{$lang.admin.editprofile}}</a>
                             <a class="dropdown-item" href="/admin/changepassword">{{$lang.admin.ChangePassword}}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item red-text" href="/logout">{{$lang.admin.Exit}}</a>
+                            <a class="dropdown-item red-text" href="/" @click="logout">{{$lang.admin.Exit}}</a>
+
                         </div>
                     </li>
 
@@ -42,6 +43,11 @@
                         that.username=response.data;
                     });
             },
+            logout(){
+                axios.post('/logout')
+                    .then(function (response) {
+                    });
+            }
         },
         mounted: function () {
             this.loadfunction();
@@ -53,4 +59,5 @@
     .text-right{ text-align: right;}
     .red-text{ color:red;}
     .dropdown-item{ text-align: right; direction: rtl;}
+
 </style>

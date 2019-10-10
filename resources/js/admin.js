@@ -235,7 +235,7 @@ const app = new Vue({
     }
     ,
     mounted:function () {
-        this.$lang.setLang('fa');
+        this.$lang.setLang('en');
         this.menucall();
     }
 

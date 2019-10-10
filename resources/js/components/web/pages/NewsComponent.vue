@@ -7,37 +7,37 @@
         </div>
 
         <div class="row px-1 px-md-5 mx-0 pb-5 ">
-            <div class="col-12 col-lg-8 mx-auto">
-            <table class="table table-striped table-sm table-warning text-center">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="col-12 col-lg-8 mx-auto" v-html="table.Text">
+<!--            <table class="table table-striped table-sm table-warning text-center">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th scope="col">#</th>-->
+<!--                    <th scope="col">First</th>-->
+<!--                    <th scope="col">Last</th>-->
+<!--                    <th scope="col">Handle</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                <tr>-->
+<!--                    <th scope="row">1</th>-->
+<!--                    <td>Mark</td>-->
+<!--                    <td>Otto</td>-->
+<!--                    <td>@mdo</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <th scope="row">2</th>-->
+<!--                    <td>Jacob</td>-->
+<!--                    <td>Thornton</td>-->
+<!--                    <td>@fat</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <th scope="row">3</th>-->
+<!--                    <td>Larry</td>-->
+<!--                    <td>the Bird</td>-->
+<!--                    <td>@twitter</td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
             </div>
         </div>
     </div>
@@ -45,7 +45,19 @@
 
 <script>
     export default {
-        name: "NewsComponent"
+        name: "NewsComponent",
+        data(){
+            return{
+                table: [],
+            }
+        },
+        mounted() {
+            let that = this;
+            axios.get('/gettable').then(function (response) {
+                that.table = response.data.to_content[0];
+                console.log(that.table);
+            });
+        }
     }
 </script>
 

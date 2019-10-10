@@ -2,9 +2,7 @@
     <img src="/media/test/cover.jpg" width="100%" height="100%">
     <div class="position-absolute myshadow"></div>
         <div class="mx-auto col-6 widthfit position-absolute header-img">
-            <img class="header-logo" src="/media/test/logo.jpg" style="width: 100%">
-
-
+            <img class="header-logo" src="/media/Layout/{{$setting['logo']}}" style="width: 100%">
         </div>
 
 </div>

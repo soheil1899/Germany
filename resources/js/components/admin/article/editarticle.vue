@@ -113,7 +113,7 @@
 
                                     </div>
                                     <div v-if="mode == 'Paragraph'">
-                                        <editor   v-model="editordata"  ref="editor" api-key="qc1sdre33bdx4lkj24aw4ffoeyx1rvbohr9ow2hzhjgfu2mi" :init="{plugins: 'wordcount','height':800}"></editor>
+                                        <editor v-model="editordata" ref="editor" api-key="qc1sdre33bdx4lkj24aw4ffoeyx1rvbohr9ow2hzhjgfu2mi" :init="{plugins: 'wordcount', plugins:'table', 'height':800}"></editor>
 
                                     </div>
                                     {{ mode }}

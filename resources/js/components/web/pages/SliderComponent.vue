@@ -1,6 +1,4 @@
 <template>
-
-
     <div>
 
         <div class="row mx-0 my-5 px-5 justify-content-around">
@@ -20,25 +18,6 @@
 
 <script>
 
-    var imageList =
-        [{
-            'name': '/media/test/slider1.jpg',
-            'id': '1'
-        },
-            {
-                'name': '/media/test/slider2.jpg',
-                'id': '2'
-            },
-            {
-                'name': '/media/test/slider3.jpg',
-                'id': '3'
-            },
-            {
-                'name': '/media/test/slider2.jpg',
-                'id': '4'
-            },
-        ];
-
 
     // import VueGallery from 'vue-gallery';
     import Lightbox from 'vue-my-photos';
@@ -47,8 +26,9 @@
         name: "SliderComponent",
         data: function () {
             return {
-                images: imageList,
-                index: null
+                images: [],
+                index: null,
+                databaseimages: [],
             };
         },
         methods: {
@@ -58,9 +38,22 @@
         },
 
         components: {
-            // 'gallery': VueGallery
             'lightbox': Lightbox
         },
+        mounted() {
+            let that = this;
+            axios.get('/getgallery').then(function (response) {
+                that.databaseimages = response.data.to_content;
+
+                for (var i = 0 ; i<that.databaseimages.length; i++){
+                    var newarr = [];
+                    newarr['id'] = i+1;
+                    newarr['name'] = that.databaseimages[i]['title'];
+                    that.images.push(newarr);
+                }
+                console.log(that.images);
+            });
+        }
     }
 </script>
 

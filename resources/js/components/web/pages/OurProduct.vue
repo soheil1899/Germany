@@ -7,29 +7,10 @@
         </div>
 
         <div class="row px-1 px-md-5 mx-0 pb-5 ">
-            <div class="col-12 col-lg-8 order-1 order-lg-0">
-                <h4>
-                    <strong>
-                        Autoselbsthilfe in Wandsbek
-                    </strong>
-                </h4>
-                <p class="font-16 text-left">
-                    Wir sind eine neu gegründete Autoselbsthilfe-Werkstatt in Hamburg Wandsbek.
-                    Wir haben zur Zeit drei Hebebühnen und viel Platz in unserer großen Halle.
-                    Mithilfe unserer 5,5 Tonnen Hebebühnen, können Sie Reparaturen an Ihrem Wohnwagen, SUV bis hin zum
-                    Transporter durchführen.
-                    In unserer sieben Meter hohen Halle können Sie bequem am Unterboden Ihres Gefährts arbeiten.
-                    An allen Arbeitsplätzen stehen Ihnen zudem 220V als auch 380V Anschlüsse zur Verfügung.
-                    Zusätzlich zu den Stromanschlüssen stehen an jedem Arbeitzplatz ein Druckluftanschluss inkl.
-                    Schlauch zur verfügung
-                    Wir können die wichtigsten Werkzeuge und Instrumente zur Verfügung stellen und unser Werkzeugbestand
-                    ergänzt sich ständig.
-                    Für die kleine Pause zwischendurch gibt es bei uns Kaffee & Tee & Softgetränke, als
-                    Eröffnungsangebot zur Zeit sogar kostenfrei.
-                </p>
-            </div>
-            <div class="col-12 col-lg-4 order-0 order-lg-1 mb-4">
-                <img src="/media/test/about.jpg" class="aboutimg">
+            <div :class="myclass(item.methods)" v-for="item in about['to_content']">
+                <div v-if="item.methods == 'Paragraph'" v-html="item.Text">
+                </div>
+                <img :src="item.title" class="aboutimg" v-if="item.methods == 'Images'">
             </div>
         </div>
     </div>
@@ -37,7 +18,28 @@
 
 <script>
     export default {
-        name: "OurProduct"
+        name: "OurProduct",
+        data() {
+            return {
+                about: [],
+            }
+        },
+        methods:{
+            myclass(methods){
+                if (methods == 'Paragraph'){
+                    return 'col-12 col-lg-8 order-1 order-lg-0';
+                }else if(methods == 'Images'){
+                    return 'col-12 col-lg-4 order-0 order-lg-1 mb-4';
+                }
+            }
+        },
+        mounted() {
+            let that = this;
+            axios.get('/getabout').then(function (response) {
+                that.about = response.data;
+                console.log(that.about);
+            });
+        }
     }
 </script>
 
